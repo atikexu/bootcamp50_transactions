@@ -25,4 +25,5 @@ public class Transaction {
 	private Double amount;
 	private LocalDateTime transactionDate;
 	private String customerType;
+	private Double balance;
 }

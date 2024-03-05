@@ -5,6 +5,7 @@ import com.bootcamp.transactions.dto.TransactionRequestDto;
 import com.bootcamp.transactions.entity.Transaction;
 import com.bootcamp.transactions.service.TransactionsService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -61,7 +62,7 @@ TransactionsController {
 	 * @param transactionRequestDto
 	 * @return Mono<Transaction>
 	 */
-	@PostMapping
+	@PostMapping(consumes= MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 	public Mono<Transaction> createTransaction(@RequestBody TransactionRequestDto transactionRequestDto){
 		return transactionsService.createTransaction(transactionRequestDto);
 	}
@@ -71,7 +72,7 @@ TransactionsController {
 	 * @param transactionRequestDto
 	 * @return Mono<Transaction>
 	 */
-	@PutMapping
+	@PutMapping(consumes= MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 	public Mono<Transaction> updateTransaction(@RequestBody TransactionRequestDto transactionRequestDto){
 		return transactionsService.updateTransaction(transactionRequestDto);
 	}

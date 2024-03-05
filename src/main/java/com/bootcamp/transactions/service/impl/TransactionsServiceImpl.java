@@ -58,7 +58,8 @@ public class TransactionsServiceImpl implements TransactionsService {
 		Transaction transaction = new Transaction(null,transactionRequestDto.getProductType(),
 				transactionRequestDto.getProductId(),transactionRequestDto.getCustomerId()
 				,transactionRequestDto.getTransactionType(),transactionRequestDto.getAmount(),
-				transactionRequestDto.getTransactionDate(), transactionRequestDto.getCustomerType());
+				transactionRequestDto.getTransactionDate(), transactionRequestDto.getCustomerType()
+				, transactionRequestDto.getBalance());
 		return transactionsRepository.save(transaction);
 	}
 
@@ -78,6 +79,7 @@ public class TransactionsServiceImpl implements TransactionsService {
 					uTransaction.setAmount(transactionRequestDto.getAmount());
 					uTransaction.setTransactionDate(transactionRequestDto.getTransactionDate());
 					uTransaction.setCustomerType(transactionRequestDto.getCustomerType());
+					uTransaction.setBalance(transactionRequestDto.getBalance());
 					return transactionsRepository.save(uTransaction);
 				});
 	}

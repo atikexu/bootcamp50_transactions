@@ -18,4 +18,5 @@ public class TransactionRequestDto {
 	private Double amount;
 	private LocalDateTime transactionDate;
 	private String customerType;
+	private Double balance;
 }
